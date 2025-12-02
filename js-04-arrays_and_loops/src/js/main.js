@@ -93,3 +93,57 @@ console.log("Después de agregar con splice:", colors.toString() );
 // 3. Agrega un invitado al principio
 // 4. Elimina al segundo invitado (índice 1) y agrega a otro en su lugar.
 // 4. Muestra la lista final.
+const guestList = ['Walter', 'Jesse'];// paso 1
+guestList.push('Hank'); // paso 2
+guestList.unshift('Mike'); // paso 3
+guestList.splice(1, 1, 'Gustavo'); // paso 4 
+console.log('Lista final de invitados:', guestList.join(', ')); // paso 5
+
+/*================================================================
+   BLOQUE 3: ESTRUCTURAS DE DATOS - PILAS Y COLAS 
+   ================================================================
+   Las pilas y colas son estructuras de datos que organizan cómo se 
+   almacenan y acceden a los elementos.
+
+   1. LIFO (Last-In, First-Out) - Pila (Stack)
+   Concepto: El último elemento en entrar es el primero en salir.
+*/
+
+// Navegamos a sitios (push)
+const historyStack = [];
+historyStack.push("google.com");
+historyStack.push("youtube.com");
+historyStack.push("github.com");
+
+console.log("Historial actual:" + historyStack); // ["google.com", "youtube.com", "github.com"]
+
+// Presiono el botón de "atrás"
+console.log(`Regresando a: ${ historyStack.pop() }`); // "github.com"
+
+/*   2. FIFO (First-In, First-Out) - Cola (Queue)
+   Concepto: El primer elemento en entrar es el primero en salir.
+*/
+const printQueue = [];
+printQueue.push("thesis.pdf");
+printQueue.push("meme.png");
+printQueue.push("invoice.docx");
+
+console.log("Cola de impresión:", printQueue); // ["thesis.pdf", "meme.png", "invoice.docx"]
+
+// La impresora termina el primer trabajo (shift)
+const printingNow = printQueue.shift();
+
+console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó)
+
+/* ================================================================
+ Ejercicio:
+   Crea un array llamado 'taskList' para gestionar tareas.
+   1. Agrega 3 tareas usando 'push'.
+   2. Muestra la lista completa de tareas.
+   3. Las tareas normales se atienden en orden de llegada (FIFO)
+   3.1 Retira (elimina) la primera tarea de la lista y muéstrala.
+   4. No dan un tarea URGENTE que debe ser atendido inmediatamente.
+    Por lo que debes poner al inicio de la lista.
+   5. Muestra la lista actualizada.
+   6. Atiende (elimina) la primera tarea de la lista y muéstrala.
+*/
