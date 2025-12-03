@@ -200,3 +200,73 @@ console.log(getWeather(88));
   }
 
 */
+
+
+const getAccessLevel = ( role ) => {
+    let accessLevel;
+    switch ( role ) {
+        case "admin":
+            accessLevel = "Acceso completo al sistema";
+           
+        case "editor":
+            accessLevel = "Acceso para editar contenido";
+          
+        case "viewer":
+            accessLevel = "Acceso solo para ver contenido";
+        default:
+            accessLevel = "Acceso denegado";
+    }
+    return accessLevel;
+};
+console.log( getAccessLevel("admin") ); // Acceso para editar contenido
+
+/* Refactorizar la función getWeather usando switch-case
+*/
+const getWeatherSwitch=(codigo)=>{
+    let message;
+    switch(codigo){
+        case 0:
+            message="Clear Sky";
+            break;  
+        case 1:
+        case 2:
+        case 3:
+            message="Mainly clear, partly cloudy, and overcast";
+            break;
+        case 45:
+        case 48:
+            message="Fog and depositing rime fog";
+            break;
+        default:
+            message="está mal";
+            break;
+    }
+    return message;
+   
+}
+conso|le.log(getWeatherSwitch(3));
+
+
+const getWeatherSwitchMessage=(codigo)=>{
+    let message;
+    switch(codigo){
+        case 0:
+            message="Clear Sky";
+            break;  
+        case 1:
+        case 2:
+        case 3:
+            message="Mainly clear, partly cloudy, and overcast";
+            break;
+        case 45:
+        case 48:
+            message="Fog and depositing rime fog";
+            break;
+        default:
+            message="está mal";
+            break;
+    }
+    return message;
+   
+}
+
